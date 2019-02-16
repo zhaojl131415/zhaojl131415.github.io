@@ -25,19 +25,23 @@ eureka:
            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/   # 设置eureka服务器所在的地址
 ```
 ## 2.创建Eureka Client
-pom.xml：
+### pom.xml：
+```
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-starter-eureka</artifactId>
 </dependency>
-启动类Application，加上注解@EnableEurekaClient（或@EnableDiscoveryClient），表明是Client
-appication.yml：
+```
+### 启动类Application，加上注解@EnableEurekaClient（或@EnableDiscoveryClient），表明是Client
+### appication.yml：
+```
 server:
     port: 8762
 eureka:
     client:
         serviceUrl:
             defaultZone: http://localhost:8761/eureka/
+```
 
 说明：@EnableEurekaClient与@EnableDiscoveryClient的区别
 @EnableEurekaClient：直白明了，明确用于Eureka服务发现组件
