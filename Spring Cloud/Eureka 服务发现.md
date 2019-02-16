@@ -1,13 +1,17 @@
 Spring Cloud使用Eureka Server,  然后所有需要访问配置文件的应用都作为一个Eureka Client注册上去。Eureka是一个高可用的组件，它没有后端缓存，每一个实例注册之后需要向注册中心发送心跳，在默认情况下Eureka Server也是一个Eureka Client, 必须要指定一个 Server。Server中监测不到某个服务的心跳，会自动剔除此服务。每个服务也会缓存Eureka的注册表，即使Eureka Server挂了，每个服务也可以基于本地注册表缓存与其他服务进行通信，但不能注册新的服务。
 
 ## 1.创建Eureka Server
-pom.xml：
+### pom.xml：
+```
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-starter-eureka-server</artifactId>
 </dependency>
-启动类Application，加上注解@EnableEurekaServer，表明是Server
-appication.yml:
+```
+### 启动类Application，加上注解@EnableEurekaServer，表明是Server
+
+### appication.yml:
+```
 server:
    port: 8761
 
@@ -19,7 +23,7 @@ eureka:
        fetchRegistry: false  # 是否从eureka服务器获取注册信息
        serviceUrl:
            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/   # 设置eureka服务器所在的地址
-
+```
 ## 2.创建Eureka Client
 pom.xml：
 <dependency>
