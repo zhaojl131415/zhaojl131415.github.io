@@ -44,5 +44,7 @@ eureka:
 ```
 
 说明：@EnableEurekaClient与@EnableDiscoveryClient的区别
+
 @EnableEurekaClient：直白明了，明确用于Eureka服务发现组件
+
 @EnableDiscoveryClient：还可以用于其他的服务发现组件：如ZK、Consul
