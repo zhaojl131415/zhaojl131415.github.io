@@ -3,7 +3,7 @@ layout:     post
 title:      "Hello World" 
 subtitle:   " \"Hi there\""
 date:       2015-06-20 09:00:00
-author:     "Cyzus"
+author:     "zhaojl131415"
 header-img: "img/hello-world.jpg"
 tag:
    - Journal
@@ -12,7 +12,7 @@ tag:
 > **“乌拉乌拉乌拉 ”**
 
 
-于是Cyzus的博客就这样开通了。
+于是zhaojl131415的博客就这样开通了。
 
 感谢github pages有爱的无限空间，感谢大神Hux提供的jekyll模板
 

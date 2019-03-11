@@ -3,7 +3,7 @@ layout:     post
 title:      "python阶乘小程序" 
 subtitle:   "渣练手"
 date:       2015-10-17 09:00:00
-author:     "Cyzus"
+author:     "zhaojl131415"
 header-img: "img/hello-world.jpg"
 tag:
    - python

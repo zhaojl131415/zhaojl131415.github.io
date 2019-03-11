@@ -3,7 +3,7 @@ layout:     post
 title:      "python解决一元二次方程" 
 subtitle:   "渣练手"
 date:       2015-10-19 09:00:00
-author:     "Cyzus"
+author:     "zhaojl131415"
 header-img: "img/hello-world.jpg"
 tag:
    - python

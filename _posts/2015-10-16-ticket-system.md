@@ -3,7 +3,7 @@ layout:     post
 title:      "(垃圾)购票系统" 
 subtitle:   "渣练手"
 date:       2015-10-16 09:00:00
-author:     "Cyzus"
+author:     "zhaojl131415"
 header-img: "img/hello-world.jpg"
 tag:
    - python

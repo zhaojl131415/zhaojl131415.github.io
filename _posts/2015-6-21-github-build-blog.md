@@ -8,7 +8,7 @@ subtitle:   " \"今日，你我都是小白\""
 
 date:       2015-06-21 09:00:00
 
-author:     "Cyzus"
+author:     "zhaojl131415"
 
 header-img: "img/2015-6-21-github-build-blog/The-New-Internet.jpg"
 

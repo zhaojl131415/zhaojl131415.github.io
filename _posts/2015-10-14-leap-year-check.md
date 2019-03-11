@@ -3,7 +3,7 @@ layout:     post
 title:      "闰年识别系统" 
 subtitle:   "渣练手"
 date:       2015-10-14 09:00:00
-author:     "Cyzus"
+author:     "zhaojl131415"
 header-img: "img/hello-world.jpg"
 tag:
    - python
