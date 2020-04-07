@@ -1,3 +1,16 @@
+---
+title:      jvm
+date:       2019-08-14 15:32
+author:     "zhaojl131415"
+catalog:    true
+categories: 
+    - Java
+    - JVM
+tags:
+    - Java
+    - JVM
+---
+
 # 基本结构
 JVM由三个主要的子系统构成
 - 类加载子系统

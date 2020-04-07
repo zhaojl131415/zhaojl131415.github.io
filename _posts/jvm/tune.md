@@ -1,3 +1,16 @@
+---
+title:      JDK性能调优监控工具
+date:       2019-08-14 15:32
+author:     "zhaojl131415"
+catalog:    true
+categories: 
+    - Java
+    - JVM
+tags:
+    - Java
+    - JVM
+---
+
 # JDK性能调优监控工具
 ## Jinfo
 查看正在运行的Java程序的扩展参数
