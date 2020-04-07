@@ -271,3 +271,6 @@ full GC:[Full GC (Allocation Failure)(无可用region)
 - -XX:InitiatingHeapOccupancyPercen:老年代占用空间超过整堆比IHOP阈值(默认45%),超过则执行混合收集
 - -XX:G1HeapWastePercent:堆废物百分比(默认5%)
 - -XX:G1MixedGCCountTarget:参数混合周期的最大总次数(默认8)
+
+进程物理内存远大于Xmx的问题分析
+https://www.cnblogs.com/duanxz/p/6148534.html
