@@ -11,7 +11,7 @@ tags:
     - JVM
 ---
 
-# JDK性能调优监控工具
+# JVM性能调优监控工具
 ## Jinfo
 查看正在运行的Java程序的扩展参数
 ### 查看JVM的参数
@@ -23,6 +23,124 @@ tags:
 jstat命令可以查看堆内存各部分的使用量，以及加载类的数量。
 
 命令格式：jstat [-命令选项] [vmid] [间隔时间/毫秒] [查询次数]
+### 类加载统计
+`jstat -class 进程id`
+- Loaded：加载class的数量
+- Bytes：所占用空间大小
+- Unloaded：未加载数量
+- Bytes：未加载占用空间
+- Time：时间
+### 垃圾回收统计
+`jstat -gc 进程id`
+- S0C：第一个Survivor区的空间
+- S1C：第二个Survivor区的空间
+- S0U：第一个Survivor区的使用空间
+- S1U：第二个Survivor区的使用空间
+- EC：Eden区的总空间
+- EU：Eden区的使用空间
+- OC：Old区的总空间
+- OU：Old区的已使用空间
+- MC：元空间的总空间
+- MU：元空间的使用空间
+- CCSC：压缩类的总空间
+- CCSU：压缩类的使用空间
+- YGC：年轻代垃圾回收次数
+- YGCT：年轻代垃圾回收消耗时间
+- FGC：老年代垃圾回收次数
+- FGCT：老年代垃圾回收消耗时间
+- GCT：垃圾回收消耗总时间
+### 堆内存统计
+`jstat -gccapacity 进程id`
+- NGCMN：新生代最小空间
+- NGCMX：新生代最大空间
+- NGC：当前新生代空间
+- S0C：第一个Survivor区空间
+- S1C：第二个Survivor区空间
+- EC：Eden区的总空间
+- OGCMN：老年代最小空间
+- OGCMX：老年代最大空间
+- OGC：当前老年代空间
+- OC：当前老年代空间
+- MCMN：最小元空间大小
+- MCMX：最大元空间大小
+- MC：当前元空间大小
+- CCSMN：最小压缩类空间大小
+- CCSMX：最大压缩类空间大小
+- CCSC：当前压缩类空间大小
+- YGC：年轻代GC次数
+- FGC：老年代GC次数
+### 新生代垃圾回收统计
+`jstat -gcnew 进程id`
+- S0C：第一个Survivor区空间
+- S1C：第二个Survivor区空间
+- S0U：第一个Survivor区的使用空间
+- S1U：第二个Survivor区的使用空间
+- TT：对象在新生代存活的次数
+- MTT：对象在新生代存活的最大次数
+- DSS：期望Survivor区大小
+- EC：Eden区的空间
+- EU：Eden区的使用空间
+- YGC：年轻代垃圾回收次数
+- YGCT：年轻代垃圾回收消耗时间
+### 新生代内存统计
+`jstat -gcnewcapacity 进程id`
+- NGCMN：新生代最小空间
+- NGCMX：新生代最大空间
+- NGC：当前新生代空间
+- S0CMX：最大第一个Survivor区空间
+- S0C：当前第一个Survivor区空间
+- S1CMX：最大第二个Survivor区空间
+- S1C：当前第二个Survivor区空间
+- ECMX：最大Eden区空间
+- EC：当前Eden区空间
+- YGC：年轻代垃圾回收次数
+- FGC：老年代垃圾回收次数
+### 老年代垃圾回收统计
+`jstat -gcold 进程id`
+- MC：元空间的总空间
+- MU：元空间的使用空间
+- CCSC：压缩类的总空间
+- CCSU：压缩类的使用空间
+- OC：Old区的总空间
+- OU：Old区的已使用空间
+- YGC：年轻代GC次数
+- FGC：老年代GC次数
+- FGCT：老年代垃圾回收消耗时间
+- GCT：垃圾回收消耗总时间
+### 老年代内存统计
+`jstat -gcoldcapacity 进程id`
+- OGCMN：老年代最小空间
+- OGCMX：老年代最大空间
+- OGC：当前老年代空间
+- OC：当前老年代空间
+- YGC：年轻代GC次数
+- FGC：老年代GC次数
+- FGCT：老年代垃圾回收消耗时间
+- GCT：垃圾回收消耗总时间
+### 元空间内存统计
+`jstat -gcmetacapacity 进程id`
+- MCMN：最小元空间大小
+- MCMX：最大元空间大小
+- MC：当前元空间大小
+- CCSMN：最小压缩类空间大小
+- CCSMX：最大压缩类空间大小
+- CCSC：当前压缩类空间大小
+- YGC：年轻代GC次数
+- FGC：老年代GC次数
+- FGCT：老年代垃圾回收消耗时间
+- GCT：垃圾回收消耗总时间
+### 总垃圾回收统计
+`jstat -gcutil 进程id`
+- S0：第一个Survivor区当前使用比例
+- S1：第二个Survivor区当前使用比例
+- E：Eden区使用比例
+- O：Old区使用比例
+- M：元空间使用比例
+- CCS：压缩使用比例
+- YGC：年轻代垃圾回收次数
+- FGC：老年代垃圾回收次数
+- FGCT：老年代垃圾回收消耗时间
+- GCT：垃圾回收消耗总时间
 ## Jmap
 可以用来查看内存信息
 ### 堆的对象统计
@@ -66,7 +184,7 @@ JVM调优主要就是调整下面两个指标
 ## GC调优步骤
 1.打印GC日志
 
--XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:./gc.log
+`-XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:./gc.log`
 
 Tomcat可以直接加载JAVA_OPTS变量里
 
