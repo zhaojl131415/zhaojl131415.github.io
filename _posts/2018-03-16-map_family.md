@@ -4,13 +4,9 @@ date:        2018-03-16 18:00
 author:     "Sylvanas Sun"
 catalog:    true
 categories: 
-    - 后端
     - Java
 tags:
-    - 后端
-    - Java
     - 数据结构
-    - 2018
 ---
 
 
